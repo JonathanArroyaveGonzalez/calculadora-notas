@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Notas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📊 Calculadora de Notas</h1>
+            <p>Ingresa tus notas y porcentajes para calcular tu nota definitiva</p>
+        </header>
+
+        <div class="calculator-body">
+            <div class="input-section">
+                <h2>Ingresa tus Notas</h2>
+                
+                <div id="notas-container" class="notas-container">
+                    <!-- Las filas se generarán dinámicamente -->
+                </div>
+
+                <div class="action-buttons">
+                    <button id="agregar-nota" class="btn-add">
+                        <span class="plus-icon">+</span> Agregar nota
+                    </button>
+                    <button id="calcular-nota" class="btn-calculate">
+                        CALCULAR NOTA 🎓
+                    </button>
+                </div>
+            </div>
+
+            <div class="resultados-section">
+                <div class="resultado-card">
+                    <h2>📈 Resultados</h2>
+                    <div class="resultado-item">
+                        <span class="label">Porcentaje Completado:</span>
+                        <span id="porcentaje-completado" class="value">0%</span>
+                    </div>
+                    <div class="resultado-item">
+                        <span class="label">Nota Definitiva:</span>
+                        <span id="nota-definitiva" class="value nota-grande">0.0</span>
+                    </div>
+                    <div class="resultado-item">
+                        <span class="label">Estado:</span>
+                        <span id="estado" class="value">Incompleto</span>
+                    </div>
+                    <div id="proyeccion" class="proyeccion-section">
+                        <h3>🎯 Proyección</h3>
+                        <p id="mensaje-proyeccion">Agrega tus notas para ver la proyección</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h3>ℹ️ Información</h3>
+            <ul>
+                <li>Las notas deben estar entre 0.0 y 5.0</li>
+                <li>Los porcentajes deben sumar máximo 100%</li>
+                <li>La nota mínima para aprobar es 3.0</li>
+                <li>Usa el botón ❌ para eliminar notas</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
