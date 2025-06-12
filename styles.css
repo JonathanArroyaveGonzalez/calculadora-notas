@@ -38,6 +38,31 @@ header p {
     opacity: 0.9;
 }
 
+.navigation {
+    display: flex;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #e9ecef;
+    padding: 0;
+}
+
+.navigation a {
+    padding: 15px 20px;
+    text-decoration: none;
+    color: #495057;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.navigation a.active {
+    color: #4facfe;
+    border-bottom: 3px solid #4facfe;
+}
+
+.navigation a:hover:not(.active) {
+    background-color: #e9ecef;
+    color: #212529;
+}
+
 .calculator-body {
     display: grid;
     grid-template-columns: 1fr 1fr;

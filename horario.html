@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de Horarios</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="horario-styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📅 Gestor de Horarios</h1>
+            <p>Organiza tu horario de clases y detecta conflictos automáticamente</p>
+        </header>
+
+        <nav class="navigation">
+            <a href="index.html">Calculadora de Notas</a>
+            <a href="horario.html" class="active">Gestor de Horarios</a>
+        </nav>
+
+        <div class="calculator-body horario-layout">
+            <div class="input-section">
+                <h2>Agregar Curso</h2>
+                <div class="curso-form">
+                    <div class="input-group">
+                        <label for="curso-nombre">Nombre del Curso:</label>
+                        <input type="text" id="curso-nombre" placeholder="Ejemplo: Matemáticas">
+                        <span class="error-message" style="display: none;"></span>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="curso-color">Color:</label>
+                        <input type="color" id="curso-color" value="#4facfe">
+                    </div>
+
+                    <div class="horario-section">
+                        <h3>Agregar Horario</h3>
+                        <div class="horario-inputs">
+                            <div class="input-group">
+                                <label for="dia-select">Día:</label>
+                                <select id="dia-select">
+                                    <option value="lunes">Lunes</option>
+                                    <option value="martes">Martes</option>
+                                    <option value="miercoles">Miércoles</option>
+                                    <option value="jueves">Jueves</option>
+                                    <option value="viernes">Viernes</option>
+                                    <option value="sabado">Sábado</option>
+                                </select>
+                            </div>
+
+                            <div class="input-group">
+                                <label for="hora-inicio">Hora de inicio:</label>
+                                <select id="hora-inicio">
+                                    <option value="7:00">7:00</option>
+                                    <option value="8:00">8:00</option>
+                                    <option value="9:00">9:00</option>
+                                    <option value="10:00">10:00</option>
+                                    <option value="11:00">11:00</option>
+                                    <option value="12:00">12:00</option>
+                                    <option value="13:00">13:00</option>
+                                    <option value="14:00">14:00</option>
+                                    <option value="15:00">15:00</option>
+                                    <option value="16:00">16:00</option>
+                                    <option value="17:00">17:00</option>
+                                    <option value="18:00">18:00</option>
+                                    <option value="19:00">19:00</option>
+                                    <option value="20:00">20:00</option>
+                                </select>
+                            </div>
+
+                            <div class="input-group">
+                                <label for="hora-fin">Hora de fin:</label>
+                                <select id="hora-fin">
+                                    <option value="8:00">8:00</option>
+                                    <option value="9:00">9:00</option>
+                                    <option value="10:00">10:00</option>
+                                    <option value="11:00">11:00</option>
+                                    <option value="12:00">12:00</option>
+                                    <option value="13:00">13:00</option>
+                                    <option value="14:00">14:00</option>
+                                    <option value="15:00">15:00</option>
+                                    <option value="16:00">16:00</option>
+                                    <option value="17:00">17:00</option>
+                                    <option value="18:00">18:00</option>
+                                    <option value="19:00">19:00</option>
+                                    <option value="20:00">20:00</option>
+                                    <option value="21:00">21:00</option>
+                                </select>
+                            </div>
+
+                            <button id="agregar-horario" class="btn-add">
+                                <span class="plus-icon">+</span> Agregar horario
+                            </button>
+                        </div>
+                    </div>
+
+                    <div id="horarios-preview">
+                        <!-- Aquí se mostrarán los horarios agregados -->
+                        <div class="empty-state">No hay horarios agregados para este curso</div>
+                    </div>
+
+                    <div class="action-buttons">
+                        <button id="guardar-curso" class="btn-calculate">
+                            GUARDAR CURSO ✓
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="horario-grid-section">
+                <div class="resultado-card">
+                    <h2>📆 Mi Horario</h2>
+                    <div class="horario-container">
+                        <div class="horario-grid" id="horario-grid">
+                            <div class="horario-header">
+                                <div class="horario-cell horario-time-header"></div>
+                                <div class="horario-cell">Lunes</div>
+                                <div class="horario-cell">Martes</div>
+                                <div class="horario-cell">Miércoles</div>
+                                <div class="horario-cell">Jueves</div>
+                                <div class="horario-cell">Viernes</div>
+                                <div class="horario-cell">Sábado</div>
+                            </div>
+                            <div class="horario-body" id="horario-body">
+                                <!-- Las celdas del horario se generarán dinámicamente -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="conflictos-section" id="conflictos-section">
+                        <h3>⚠️ Conflictos Detectados</h3>
+                        <div id="conflictos-list">
+                            <div class="empty-state">No hay conflictos en tu horario</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cursos-list-section">
+            <h3>📚 Mis Cursos</h3>
+            <div id="cursos-list">
+                <!-- Los cursos se mostrarán aquí -->
+                <div class="empty-state">No hay cursos agregados. Comienza agregando uno arriba.</div>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h3>ℹ️ Información</h3>
+            <ul>
+                <li>Puedes agregar múltiples horarios para un mismo curso</li>
+                <li>El sistema detectará automáticamente conflictos de horario</li>
+                <li>Usa colores para diferenciar visualmente tus cursos</li>
+                <li>Haz clic en un curso en la lista para editarlo</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="horario.js"></script>
+</body>
+</html>
