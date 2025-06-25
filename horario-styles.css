@@ -1,28 +1,5 @@
 /* Estilos específicos para el gestor de horarios */
-.navigation {
-    display: flex;
-    background-color: #f8f9fa;
-    border-bottom: 1px solid #e9ecef;
-    padding: 0;
-}
-
-.navigation a {
-    padding: 15px 20px;
-    text-decoration: none;
-    color: #495057;
-    font-weight: 600;
-    transition: all 0.3s ease;
-}
-
-.navigation a.active {
-    color: #4facfe;
-    border-bottom: 3px solid #4facfe;
-}
-
-.navigation a:hover:not(.active) {
-    background-color: #e9ecef;
-    color: #212529;
-}
+/* Navigation styles are now in the main styles.css file */
 
 .horario-layout {
     grid-template-columns: 1fr 1.5fr;
@@ -164,6 +141,10 @@
 .horario-header {
     display: flex;
     background-color: #f0f0f0;
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background-color: #f8f9fa;
 }
 
 .horario-cell {
@@ -177,6 +158,11 @@
 .horario-time-header {
     min-width: 60px;
     max-width: 60px;
+    position: sticky;
+    left: 0;
+    top: 0;
+    z-index: 6;
+    background-color: #f8f9fa;
 }
 
 .horario-body {
@@ -200,6 +186,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    position: sticky;
+    left: 0;
+    z-index: 4;
+    background-color: #f8f9fa;
 }
 
 .dia-column {
@@ -374,6 +364,23 @@
     font-weight: 600;
 }
 
+/* Responsive styles for tablets */
+@media (max-width: 992px) {
+    .horario-layout {
+        grid-template-columns: 1fr;
+    }
+    
+    .horario-grid-section {
+        margin-top: 20px;
+    }
+    
+    .horario-inputs {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+}
+
+/* Responsive styles for mobile devices */
 @media (max-width: 768px) {
     .horario-layout {
         grid-template-columns: 1fr;
@@ -396,5 +403,109 @@
     
     #cursos-list {
         grid-template-columns: 1fr;
+    }
+    
+    .curso-card {
+        padding: 15px;
+    }
+    
+    .curso-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .curso-actions button {
+        width: 100%;
+    }
+    
+    .filtro-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .filtro-container input {
+        width: 100%;
+    }
+    
+    .materia-pendiente-section {
+        padding: 12px;
+    }
+    
+    .horario-container {
+        overflow-x: auto;
+        padding-bottom: 10px;
+    }
+    
+    .horario-grid {
+        min-width: 600px;
+    }
+    
+    .horario-header {
+        position: sticky;
+        top: 0;
+        z-index: 5;
+        background-color: #f8f9fa;
+    }
+    
+    /* Mobile scroll indicators for horario grid */
+    .horario-container::-webkit-scrollbar {
+        height: 8px;
+    }
+    
+    .horario-container::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 4px;
+    }
+    
+    .horario-container::-webkit-scrollbar-thumb {
+        background: #4facfe;
+        border-radius: 4px;
+    }
+    
+    .horario-container::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        height: 10px;
+        width: 10px;
+        background: linear-gradient(135deg, transparent 50%, rgba(79, 172, 254, 0.3) 50%);
+        animation: pulseIndicator 1.5s infinite;
+        opacity: 0.7;
+        pointer-events: none;
+    }
+    
+    @keyframes pulseIndicator {
+        0% { opacity: 0.3; }
+        50% { opacity: 0.7; }
+        100% { opacity: 0.3; }
+    }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+    .horario-cell {
+        padding: 3px;
+        font-size: 0.7rem;
+    }
+    
+    .curso-nombre {
+        font-size: 0.7rem;
+    }
+    
+    .curso-hora {
+        font-size: 0.6rem;
+    }
+    
+    .horario-section h3 {
+        font-size: 1rem;
+    }
+    
+    .curso-title {
+        font-size: 1rem;
+    }
+    
+    .curso-horarios {
+        font-size: 0.8rem;
     }
 }

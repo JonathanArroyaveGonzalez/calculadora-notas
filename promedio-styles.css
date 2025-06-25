@@ -320,6 +320,19 @@
     border-radius: 6px;
 }
 
+/* Responsive styles for tablets */
+@media (max-width: 992px) {
+    .promedio-layout {
+        grid-template-columns: 1fr;
+    }
+    
+    .materias-section {
+        max-height: none;
+        margin-top: 20px;
+    }
+}
+
+/* Responsive styles for mobile devices */
 @media (max-width: 768px) {
     .promedio-layout {
         grid-template-columns: 1fr;
@@ -336,5 +349,82 @@
     
     .filtro-container input {
         width: 100%;
+    }
+    
+    .resumen-promedio {
+        padding: 15px;
+    }
+    
+    .meta-section {
+        padding: 15px;
+    }
+    
+    .resultado-proyeccion {
+        padding: 15px;
+    }
+    
+    .seleccion-container {
+        padding: 15px;
+    }
+    
+    .materias-list {
+        max-height: 250px;
+    }
+    
+    .materias-seleccionadas {
+        max-height: 150px;
+    }
+    
+    .historico-section {
+        padding: 15px;
+    }
+    
+    .materias-table th,
+    .materias-table td {
+        padding: 8px 10px;
+        font-size: 0.9rem;
+    }
+    
+    .materia-item {
+        padding: 10px;
+    }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+    .promedio-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .promedio-item .value {
+        margin-top: 5px;
+    }
+    
+    .materias-table th,
+    .materias-table td {
+        padding: 6px 8px;
+        font-size: 0.8rem;
+    }
+    
+    .materia-codigo {
+        font-size: 0.7rem;
+    }
+    
+    .materia-nombre {
+        font-size: 0.85rem;
+    }
+    
+    .materia-creditos {
+        padding: 3px 8px;
+        font-size: 0.75rem;
+    }
+    
+    .tabla-container {
+        overflow-x: auto;
+    }
+    
+    .materias-table {
+        min-width: 400px;
     }
 }

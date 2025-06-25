@@ -9,6 +9,8 @@ body {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     min-height: 100vh;
     padding: 20px;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 .container {
@@ -18,6 +20,7 @@ body {
     border-radius: 20px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
     overflow: hidden;
+    width: 100%;
 }
 
 header {
@@ -43,6 +46,7 @@ header p {
     background-color: #f8f9fa;
     border-bottom: 1px solid #e9ecef;
     padding: 0;
+    flex-wrap: wrap;
 }
 
 .navigation a {
@@ -51,6 +55,8 @@ header p {
     color: #495057;
     font-weight: 600;
     transition: all 0.3s ease;
+    flex-grow: 1;
+    text-align: center;
 }
 
 .navigation a.active {
@@ -356,16 +362,72 @@ header p {
     display: block;
 }
 
+/* Better touch interactions */
+button, 
+.btn-add, 
+.btn-calculate, 
+.btn-remove, 
+.btn-edit, 
+.btn-delete {
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    user-select: none;
+}
+
+/* Larger touch targets for mobile */
+@media (max-width: 768px) {
+    button, 
+    .btn-add, 
+    .btn-calculate, 
+    .btn-remove, 
+    .btn-edit, 
+    .btn-delete,
+    select,
+    input[type="color"] {
+        min-height: 44px; /* Apple's recommended minimum touch target size */
+    }
+    
+    .input-group label {
+        margin-bottom: 8px;
+        font-size: 1rem;
+    }
+}
+
+/* Responsive styles for tablets */
+@media (max-width: 992px) {
+    .calculator-body {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 25px;
+    }
+    
+    .container {
+        margin: 15px;
+        border-radius: 15px;
+    }
+    
+    header h1 {
+        font-size: 2.2rem;
+    }
+    
+    .navigation a {
+        padding: 12px 15px;
+    }
+}
+
+/* Responsive styles for mobile devices */
 @media (max-width: 768px) {
     .calculator-body {
         grid-template-columns: 1fr;
         gap: 20px;
-        padding: 20px;
+        padding: 15px;
     }
     
     .nota-row {
         grid-template-columns: 1fr;
         gap: 15px;
+        padding: 15px;
     }
     
     .btn-remove {
@@ -375,15 +437,109 @@ header p {
     }
     
     header h1 {
-        font-size: 2rem;
+        font-size: 1.8rem;
+    }
+    
+    header p {
+        font-size: 1rem;
     }
     
     .container {
-        margin: 10px;
+        margin: 5px;
         border-radius: 15px;
     }
     
     .nota-grande {
         font-size: 1.5rem !important;
+    }
+    
+    .navigation {
+        flex-direction: column;
+    }
+    
+    .navigation a {
+        padding: 12px;
+        text-align: center;
+        border-bottom: 1px solid #e9ecef;
+    }
+    
+    .navigation a.active {
+        border-bottom: 3px solid #4facfe;
+    }
+    
+    .input-section, .resultados-section {
+        padding: 15px;
+    }
+    
+    .action-buttons {
+        gap: 10px;
+    }
+    
+    .btn-add, .btn-calculate {
+        padding: 12px 15px;
+    }
+    
+    .info-section {
+        padding: 15px;
+    }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+    header {
+        padding: 20px 15px;
+    }
+    
+    header h1 {
+        font-size: 1.6rem;
+    }
+    
+    .nota-grande {
+        font-size: 1.3rem !important;
+    }
+    
+    .resultado-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .value {
+        margin-top: 5px;
+    }
+}
+
+/* Responsive table styles */
+.tabla-container {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Ensure inputs have appropriate size on mobile */
+input[type="text"],
+input[type="number"],
+input[type="color"],
+select {
+    font-size: 16px; /* Prevents iOS zoom */
+}
+
+/* Accessibility focus states */
+button:focus,
+input:focus,
+select:focus,
+a:focus {
+    outline: 2px solid #4facfe;
+    outline-offset: 2px;
+}
+
+/* Hide focus outlines for mouse/touch but show for keyboard */
+:focus:not(:focus-visible) {
+    outline: none;
+}
+
+/* Fix for iOS input zoom */
+@media screen and (max-width: 768px) {
+    input, select, textarea {
+        font-size: 16px !important;
     }
 }
