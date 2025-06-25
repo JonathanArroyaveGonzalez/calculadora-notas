@@ -17,21 +17,39 @@
         <nav class="navigation">
             <a href="index.html">Calculadora de Notas</a>
             <a href="horario.html" class="active">Gestor de Horarios</a>
+            <a href="promedio.html">Promedio Ponderado</a>
         </nav>
 
         <div class="calculator-body horario-layout">
             <div class="input-section">
                 <h2>Agregar Curso</h2>
                 <div class="curso-form">
-                    <div class="input-group">
-                        <label for="curso-nombre">Nombre del Curso:</label>
-                        <input type="text" id="curso-nombre" placeholder="Ejemplo: Matemáticas">
-                        <span class="error-message" style="display: none;"></span>
+                    <div class="materia-pendiente-section">
+                        <h3>Seleccionar de Materias Pendientes</h3>
+                        <div class="filtro-container">
+                            <label for="filtro-pendientes">Filtrar materias:</label>
+                            <input type="text" id="filtro-pendientes" placeholder="Buscar materia">
+                        </div>
+                        <div class="input-group">
+                            <label for="materia-select">Materias pendientes:</label>
+                            <select id="materia-select">
+                                <option value="">-- Selecciona una materia --</option>
+                                <!-- Las materias pendientes se cargarán dinámicamente -->
+                            </select>
+                        </div>
                     </div>
+                    
+                    <div class="curso-details">
+                        <div class="input-group">
+                            <label for="curso-nombre">Nombre del Curso:</label>
+                            <input type="text" id="curso-nombre" placeholder="Ejemplo: Matemáticas">
+                            <span class="error-message" style="display: none;"></span>
+                        </div>
 
-                    <div class="input-group">
-                        <label for="curso-color">Color:</label>
-                        <input type="color" id="curso-color" value="#4facfe">
+                        <div class="input-group">
+                            <label for="curso-color">Color:</label>
+                            <input type="color" id="curso-color" value="#4facfe">
+                        </div>
                     </div>
 
                     <div class="horario-section">

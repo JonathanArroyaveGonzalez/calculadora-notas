@@ -34,6 +34,69 @@
     gap: 20px;
 }
 
+.materia-pendiente-section {
+    background: #f1f8ff;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    border-left: 4px solid #4facfe;
+}
+
+.materia-pendiente-section h3 {
+    color: #0066cc;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.filtro-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    gap: 10px;
+}
+
+.filtro-container label {
+    font-weight: 600;
+    color: #555;
+    flex-shrink: 0;
+}
+
+.filtro-container input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 0.9rem;
+}
+
+.filtro-container input:focus {
+    outline: none;
+    border-color: #4facfe;
+    box-shadow: 0 0 0 3px rgba(79, 172, 254, 0.1);
+}
+
+#materia-select {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: white;
+}
+
+#materia-select:focus {
+    outline: none;
+    border-color: #4facfe;
+    box-shadow: 0 0 0 3px rgba(79, 172, 254, 0.1);
+}
+
+.curso-details {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
 .horario-section {
     background: white;
     padding: 15px;
@@ -293,6 +356,22 @@
 .curso-card .btn-edit:hover,
 .curso-card .btn-delete:hover {
     filter: brightness(0.9);
+}
+
+.curso-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.curso-badge {
+    background-color: #28a745;
+    color: white;
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
 }
 
 @media (max-width: 768px) {

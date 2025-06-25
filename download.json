@@ -1,0 +1,422 @@
+{
+    "promedio_ponderado_actual": 3.87,
+    "asignaturas_aprobadas_con_nota_mayor_a_3": [
+        {
+            "codigo": "BIOLOGIA 127G7H",
+            "descripcion": "Biologia Para Ingenieria",
+            "nota": 3.3,
+            "creditos": 3.0
+        },
+        {
+            "codigo": "ECONO 88G6E",
+            "descripcion": "Ingeniería Económica Y Financi",
+            "nota": 4.2,
+            "creditos": 2.0
+        },
+        {
+            "codigo": "ECONO 96G6E",
+            "descripcion": "Investigación De Mercados",
+            "nota": 4.1,
+            "creditos": 2.0
+        },
+        {
+            "codigo": "FILOSO 448G5E",
+            "descripcion": "Razonamiento Lógico I",
+            "nota": 4.2,
+            "creditos": 1.0
+        },
+        {
+            "codigo": "FILOSO 449G5E",
+            "descripcion": "Razonamiento Lógico Ii",
+            "nota": 4.2,
+            "creditos": 1.0
+        },
+        {
+            "codigo": "FILOSO 450G5E",
+            "descripcion": "Razonamiento Lógico Iii",
+            "nota": 4.1,
+            "creditos": 1.0
+        },
+        {
+            "codigo": "FISICA 127G7F",
+            "descripcion": "Física Ii-Ing",
+            "nota": 4.2,
+            "creditos": 2.0
+        },
+        {
+            "codigo": "FISICA 128G7F",
+            "descripcion": "Laboratorio Fisica I Ing",
+            "nota": 4.3,
+            "creditos": 1.0
+        },
+        {
+            "codigo": "FISICA 129G7F",
+            "descripcion": "Laboratorio Fisica Ii Ing",
+            "nota": 5.0,
+            "creditos": 1.0
+        },
+        {
+            "codigo": "FISICA 43G7F",
+            "descripcion": "Física I Ing",
+            "nota": 4.4,
+            "creditos": 3.0
+        },
+        {
+            "codigo": "FISICA 47G7F",
+            "descripcion": "Física Iii Ing",
+            "nota": 3.8,
+            "creditos": 2.0
+        },
+        {
+            "codigo": "INGENIER 156G8E",
+            "descripcion": "Investigación De Operaciones",
+            "nota": 4.0,
+            "creditos": 2.0
+        },
+        {
+            "codigo": "JURIDICA 801G6K",
+            "descripcion": "Constitución Política De Colom",
+            "nota": 3.9,
+            "creditos": 2.0
+        },
+        {
+            "codigo": "LEXTRANJ 292G5F",
+            "descripcion": "Inglés Para Ingeniería",
+            "nota": 3.9,
+            "creditos": 2.0
+        },
+        {
+            "codigo": "LINGUIST 453G5F",
+            "descripcion": "Textos Y Discursos-Nivel Básic",
+            "nota": 3.6,
+            "creditos": 1.0
+        },
+        {
+            "codigo": "MATEMATI 15G7E",
+            "descripcion": "Lógica Matemática",
+            "nota": 4.7,
+            "creditos": 3.0
+        },
+        {
+            "codigo": "MATEMATI 17G7E",
+            "descripcion": "Matemáticas Fundamentales",
+            "nota": 3.2,
+            "creditos": 4.0
+        },
+        {
+            "codigo": "MATEMATI 18G7E",
+            "descripcion": "Cálculo I",
+            "nota": 3.0,
+            "creditos": 3.0
+        },
+        {
+            "codigo": "MATEMATI 19G7E",
+            "descripcion": "Cálculo Ii",
+            "nota": 3.8,
+            "creditos": 3.0
+        },
+        {
+            "codigo": "MATEMATI 20G7E",
+            "descripcion": "Cálculo Iii",
+            "nota": 3.1,
+            "creditos": 3.0
+        },
+        {
+            "codigo": "MATEMATI 21G7E",
+            "descripcion": "Matemáticas Especiales",
+            "nota": 3.0,
+            "creditos": 3.0
+        },
+        {
+            "codigo": "MATEMATI 22G7E",
+            "descripcion": "Álgebra Lineal",
+            "nota": 3.5,
+            "creditos": 3.0
+        },
+        {
+            "codigo": "MATEMATI 32G7E",
+            "descripcion": "Matemáticas Discretas",
+            "nota": 3.3,
+            "creditos": 3.0
+        },
+        {
+            "codigo": "MATEMATI 38G7E",
+            "descripcion": "Probabilidad",
+            "nota": 3.9,
+            "creditos": 3.0
+        },
+        {
+            "codigo": "SISTEMAS 179G8F",
+            "descripcion": "Gestion De Proyectos",
+            "nota": 3.8,
+            "creditos": 2.0
+        },
+        {
+            "codigo": "SISTEMAS 25G8F",
+            "descripcion": "Emprendimiento Y Creacion De E",
+            "nota": 4.5,
+            "creditos": 3.0
+        },
+        {
+            "codigo": "SISTEMAS 264G8F",
+            "descripcion": "Desarrollo Avanzado Aplicacion",
+            "nota": 4.0,
+            "creditos": 2.0
+        },
+        {
+            "codigo": "SISTEMAS 34G8F",
+            "descripcion": "Investigación Para Ingeniería",
+            "nota": 4.2,
+            "creditos": 2.0
+        },
+        {
+            "codigo": "SISTEMAS 45G8F",
+            "descripcion": "Teoría General De Sistemas",
+            "nota": 4.3,
+            "creditos": 2.0
+        },
+        {
+            "codigo": "SISTEMAS 46G8F",
+            "descripcion": "Diseño De Interfaces",
+            "nota": 3.0,
+            "creditos": 2.0
+        },
+        {
+            "codigo": "SISTEMAS 47G8F",
+            "descripcion": "Introducción A La Ingeniería D",
+            "nota": 4.4,
+            "creditos": 2.0
+        },
+        {
+            "codigo": "SISTEMAS 48G8F",
+            "descripcion": "Programación Ii",
+            "nota": 4.6,
+            "creditos": 3.0
+        },
+        {
+            "codigo": "SISTEMAS 50G8F",
+            "descripcion": "Sistemas Operativos",
+            "nota": 3.1,
+            "creditos": 3.0
+        },
+        {
+            "codigo": "SISTEMAS 51G8F",
+            "descripcion": "Arquitectura De Computadores",
+            "nota": 4.1,
+            "creditos": 3.0
+        },
+        {
+            "codigo": "SISTEMAS 52G8F",
+            "descripcion": "Programacion I",
+            "nota": 4.1,
+            "creditos": 3.0
+        },
+        {
+            "codigo": "SISTEMAS 53G8F",
+            "descripcion": "Programacion Iii",
+            "nota": 3.6,
+            "creditos": 3.0
+        },
+        {
+            "codigo": "SISTEMAS 54G8F",
+            "descripcion": "Estructuras De Datos",
+            "nota": 3.9,
+            "creditos": 3.0
+        },
+        {
+            "codigo": "SISTEMAS 55G8F",
+            "descripcion": "Circuitos Digitales",
+            "nota": 3.6,
+            "creditos": 3.0
+        },
+        {
+            "codigo": "SISTEMAS 56G8F",
+            "descripcion": "Autómatas Y Lenguajes Formales",
+            "nota": 4.0,
+            "creditos": 2.0
+        },
+        {
+            "codigo": "SISTEMAS 57G8F",
+            "descripcion": "Bases De Datos I",
+            "nota": 3.8,
+            "creditos": 3.0
+        },
+        {
+            "codigo": "SISTEMAS 58G8F",
+            "descripcion": "Programación Concurrente Y Dis",
+            "nota": 4.1,
+            "creditos": 3.0
+        },
+        {
+            "codigo": "SISTEMAS 59G8F",
+            "descripcion": "Análisis Y Diseño De Algoritmo",
+            "nota": 3.0,
+            "creditos": 3.0
+        },
+        {
+            "codigo": "SISTEMAS 60G8F",
+            "descripcion": "Microprocesadores",
+            "nota": 4.0,
+            "creditos": 3.0
+        },
+        {
+            "codigo": "SISTEMAS 62G8F",
+            "descripcion": "Bases De Datos Ii",
+            "nota": 4.4,
+            "creditos": 3.0
+        },
+        {
+            "codigo": "SISTEMAS 63G8F",
+            "descripcion": "Estructura De Lenguajes",
+            "nota": 4.0,
+            "creditos": 2.0
+        },
+        {
+            "codigo": "SISTEMAS 64G8F",
+            "descripcion": "Sistemas Inteligentes I",
+            "nota": 3.8,
+            "creditos": 2.0
+        },
+        {
+            "codigo": "SISTEMAS 66G8F",
+            "descripcion": "Ingeniería De Software I",
+            "nota": 4.0,
+            "creditos": 3.0
+        },
+        {
+            "codigo": "SISTEMAS 67G8F",
+            "descripcion": "Ingeniería De Software Ii",
+            "nota": 4.2,
+            "creditos": 3.0
+        },
+        {
+            "codigo": "SISTEMAS 68G8F",
+            "descripcion": "Ingeniería De Software Iii",
+            "nota": 3.8,
+            "creditos": 3.0
+        },
+        {
+            "codigo": "SISTEMAS 70G8F",
+            "descripcion": "Seguridad Informática",
+            "nota": 4.8,
+            "creditos": 3.0
+        },
+        {
+            "codigo": "SISTEMAS 72G8F",
+            "descripcion": "Administración De Sistemas",
+            "nota": 4.0,
+            "creditos": 3.0
+        },
+        {
+            "codigo": "SISTEMAS 74G8F",
+            "descripcion": "Gestión Tecnológica",
+            "nota": 3.9,
+            "creditos": 2.0
+        },
+        {
+            "codigo": "SISTEMAS 77G8F",
+            "descripcion": "Comunicaciones De Datos",
+            "nota": 4.1,
+            "creditos": 2.0
+        },
+        {
+            "codigo": "SISTEMAS 78G8F",
+            "descripcion": "Redes De Computadores I",
+            "nota": 3.9,
+            "creditos": 2.0
+        },
+        {
+            "codigo": "SISTEMAS 79G8F",
+            "descripcion": "Redes De Computadores Ii",
+            "nota": 3.8,
+            "creditos": 3.0
+        },
+        {
+            "codigo": "SISTEMAS 80G8F",
+            "descripcion": "Redes De Computadores Iii",
+            "nota": 3.5,
+            "creditos": 2.0
+        }
+    ],
+    "asignaturas_pendientes": [
+        {
+            "codigo": "SISTEMAS 145G8F",
+            "descripcion": "Inteligencia de Negocios",
+            "creditos": 3.0
+        },
+        {
+            "codigo": "SISTEMAS 219G8F",
+            "descripcion": "Desarrollo De Videojuegos",
+            "creditos": 3.0
+        },
+        {
+            "codigo": "SISTEMAS 214G8F",
+            "descripcion": "Fundamentos De Ingeniería Biom",
+            "creditos": 3.0
+        },
+        {
+            "codigo": "SISTEMAS 65G8F",
+            "descripcion": "Sistemas Inteligentes Ii",
+            "creditos": 2.0
+        },
+        {
+            "codigo": "SISTEMAS 223G8F",
+            "descripcion": "Automatización Y Control De Pr",
+            "creditos": 3.0
+        },
+        {
+            "codigo": "SISTEMAS 71G8F",
+            "descripcion": "Auditoria informatica",
+            "creditos": 3.0
+        },
+        {
+            "codigo": "SISTEMAS 181G8F",
+            "descripcion": "Proyecto Integrador",
+            "creditos": 4.0
+        },
+        {
+            "codigo": "SISTEMAS9943G8F",
+            "descripcion": "Práctica",
+            "creditos": 5.0
+        },
+        {
+            "codigo": "SISTEMAS 75G8F",
+            "descripcion": "Ingenieria del conocimiento",
+            "creditos": 3.0
+        },
+        {
+            "codigo": "ECONO 89G6E",
+            "descripcion": "Habilidades Gerenciales",
+            "creditos": 3.0
+        },
+        {
+            "codigo": "SISTEMAS 261G8F",
+            "descripcion": "Framework Laravel Para Desarro",
+            "creditos": 2.0
+        },
+        {
+            "codigo": "SISTEMAS 265G8F",
+            "descripcion": "Framework spring para desar",
+            "creditos": 2.0
+        },
+        {
+            "codigo": "SISTEMAS 2G8F",
+            "descripcion": "Catedra Virtual desplazamiento",
+            "creditos": 3.0
+        },
+        {
+            "codigo": "SISTEMAS 2G8F",
+            "descripcion": "Textos y discursos nivel medio",
+            "creditos": 1.0
+        },
+        {
+            "codigo": "SISTEMAS 2G8F",
+            "descripcion": "Textos y discursos nivel avanzado",
+            "creditos": 1.0
+        }
+    ],
+    "prediccion_promedio_4_1": {
+        "nota_promedio_necesaria_en_restantes": 5.0,
+        "creditos_restantes_totales": 39.0
+    }
+}

@@ -1,0 +1,340 @@
+/* Estilos específicos para la calculadora de promedio ponderado */
+
+.promedio-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 30px;
+}
+
+.promedio-input-section {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.resumen-promedio {
+    background-color: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.promedio-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.promedio-item:last-child {
+    border-bottom: none;
+}
+
+.meta-section {
+    background-color: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.meta-section h3 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.resultado-proyeccion {
+    background-color: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.resultado-proyeccion h3 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.mensaje-proyeccion {
+    line-height: 1.6;
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.materias-section {
+    max-height: 700px;
+    overflow-y: auto;
+}
+
+.materias-help {
+    margin-bottom: 15px;
+    text-align: center;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.filtro-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.filtro-container label {
+    font-weight: 600;
+    color: #555;
+    flex-shrink: 0;
+}
+
+.filtro-container input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 0.9rem;
+}
+
+.filtro-container input:focus {
+    outline: none;
+    border-color: #4facfe;
+    box-shadow: 0 0 0 3px rgba(79, 172, 254, 0.1);
+}
+
+.materias-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+    max-height: 300px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.materia-item {
+    background: white;
+    border-left: 4px solid #4facfe;
+    border-radius: 8px;
+    padding: 12px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.materia-item:hover {
+    background: #f8f9fa;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.materia-item.selected {
+    background: #e7f3ff;
+    border-left: 4px solid #0066cc;
+}
+
+.materia-info {
+    flex-grow: 1;
+}
+
+.materia-codigo {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 3px;
+}
+
+.materia-nombre {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #333;
+}
+
+.materia-creditos {
+    background: #f8f9fa;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #555;
+}
+
+.seleccion-container {
+    margin-top: 25px;
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.seleccion-container h3 {
+    margin-bottom: 15px;
+    color: #333;
+    font-size: 1.1rem;
+}
+
+.materias-seleccionadas {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 15px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.materia-seleccionada {
+    background: white;
+    border-radius: 8px;
+    padding: 12px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.btn-remove-materia {
+    background: #dc3545;
+    color: white;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.btn-remove-materia:hover {
+    background: #c82333;
+    transform: scale(1.1);
+}
+
+.total-creditos {
+    font-weight: 600;
+    padding: 10px;
+    text-align: right;
+    color: #333;
+}
+
+.historico-section {
+    padding: 25px 30px;
+    background: #f8f9fa;
+    margin-top: 30px;
+}
+
+.historico-section h3 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.tabla-container {
+    overflow-x: auto;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.materias-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.materias-table th,
+.materias-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.materias-table th {
+    background: #f8f9fa;
+    font-weight: 600;
+    color: #333;
+}
+
+.materias-table tr:last-child td {
+    border-bottom: none;
+}
+
+.nota-sobresaliente {
+    font-weight: 700;
+    color: #28a745;
+}
+
+.nota-normal {
+    color: #0066cc;
+}
+
+.nota-baja {
+    color: #dc3545;
+}
+
+.hidden {
+    display: none;
+}
+
+.btn-reset-seleccion {
+    background: #6c757d;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-top: 10px;
+}
+
+.btn-reset-seleccion:hover {
+    background: #5a6268;
+}
+
+.proyeccion-exito {
+    color: #28a745;
+    font-weight: 600;
+}
+
+.proyeccion-alerta {
+    color: #ffc107;
+    font-weight: 600;
+}
+
+.proyeccion-imposible {
+    color: #dc3545;
+    font-weight: 600;
+}
+
+.materia-input-container {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.materia-input-container input {
+    width: 80px;
+    padding: 5px 10px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+}
+
+@media (max-width: 768px) {
+    .promedio-layout {
+        grid-template-columns: 1fr;
+    }
+    
+    .materias-section {
+        max-height: none;
+    }
+    
+    .filtro-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .filtro-container input {
+        width: 100%;
+    }
+}

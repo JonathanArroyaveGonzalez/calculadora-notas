@@ -4,18 +4,23 @@ class GestorHorarios {
         this.cursoActual = {
             nombre: '',
             color: '#4facfe',
-            horarios: []
+            horarios: [],
+            codigo: ''  // Nuevo campo para almacenar el código de la materia
         };
         this.contadorHorarioId = 0;
         this.cursoEditando = null;
         this.horasDelDia = this.generarHorasDelDia();
         this.diasSemana = ['lunes', 'martes', 'miercoles', 'jueves', 'viernes', 'sabado'];
+        this.materiasPendientes = []; // Array para almacenar las materias pendientes del JSON
 
         this.initElementos();
         this.initEventListeners();
         this.initHorarioGrid();
-        this.cargarCursos();
-        this.actualizarVistaHorario();
+        this.cargarMateriasPendientes()
+            .then(() => {
+                this.cargarCursos();
+                this.actualizarVistaHorario();
+            });
     }
 
     initElementos() {
@@ -31,6 +36,8 @@ class GestorHorarios {
         this.cursosList = document.getElementById('cursos-list');
         this.horarioBody = document.getElementById('horario-body');
         this.conflictosList = document.getElementById('conflictos-list');
+        this.selectMateria = document.getElementById('materia-select'); // Nuevo elemento para seleccionar materias pendientes
+        this.filtroPendientesInput = document.getElementById('filtro-pendientes'); // Nuevo elemento para filtrar materias
     }
 
     initEventListeners() {
@@ -38,6 +45,14 @@ class GestorHorarios {
         this.guardarCursoBtn.addEventListener('click', () => this.guardarCurso());
         this.nombreInput.addEventListener('input', () => this.cursoActual.nombre = this.nombreInput.value);
         this.colorInput.addEventListener('input', () => this.cursoActual.color = this.colorInput.value);
+
+        // Manejar la selección de materias pendientes
+        this.selectMateria.addEventListener('change', () => this.seleccionarMateriaPendiente());
+        
+        // Manejar el filtro de materias pendientes
+        if (this.filtroPendientesInput) {
+            this.filtroPendientesInput.addEventListener('input', () => this.filtrarMateriasPendientes());
+        }
 
         // Asegurar que la hora de fin sea mayor a la de inicio
         this.horaInicioSelect.addEventListener('change', () => {
@@ -185,9 +200,18 @@ class GestorHorarios {
                 `${this.capitalizarPrimeraLetra(h.dia)} ${h.horaInicio}-${h.horaFin}`
             ).join(', ');
             
+            // Determinar si es una materia pendiente
+            const esMateriaPendiente = curso.codigo && this.materiasPendientes.some(m => m.codigo === curso.codigo);
+            const badgeHTML = esMateriaPendiente ? 
+                `<div class="curso-badge" title="Materia pendiente del plan de estudios">Pendiente</div>` : 
+                '';
+            
             html += `
                 <div class="curso-card" style="border-top-color: ${curso.color}">
-                    <div class="curso-title">${curso.nombre}</div>
+                    <div class="curso-header">
+                        <div class="curso-title">${curso.nombre}</div>
+                        ${badgeHTML}
+                    </div>
                     <div class="curso-horarios">${horarioTexto}</div>
                     <div class="curso-actions">
                         <button class="btn-edit" onclick="gestor.editarCurso(${index})">✏️ Editar</button>
@@ -235,6 +259,45 @@ class GestorHorarios {
         }
     }
 
+    async cargarMateriasPendientes() {
+        try {
+            const response = await fetch('download.json');
+            if (!response.ok) {
+                throw new Error('No se pudo cargar el archivo JSON');
+            }
+            const data = await response.json();
+            
+            // Guardar las materias pendientes
+            this.materiasPendientes = data.asignaturas_pendientes || [];
+            
+            // Actualizar el selector de materias
+            this.actualizarSelectorMaterias();
+        } catch (error) {
+            console.error('Error al cargar las materias pendientes:', error);
+            // Si hay error, dejamos un select vacío pero funcional
+            this.actualizarSelectorMaterias();
+        }
+    }
+    
+    actualizarSelectorMaterias() {
+        // Limpiar el selector
+        this.selectMateria.innerHTML = '<option value="">-- Selecciona una materia --</option>';
+        
+        // Ordenar materias por descripción para fácil acceso
+        const materiasOrdenadas = [...this.materiasPendientes].sort((a, b) => 
+            a.descripcion.localeCompare(b.descripcion)
+        );
+        
+        // Agregar opciones al selector
+        materiasOrdenadas.forEach(materia => {
+            const option = document.createElement('option');
+            option.value = materia.codigo;
+            option.textContent = `${materia.descripcion} (${materia.creditos} cr)`;
+            option.dataset.descripcion = materia.descripcion;
+            this.selectMateria.appendChild(option);
+        });
+    }
+    
     cargarCursos() {
         const cursosGuardados = localStorage.getItem('cursos');
         
@@ -433,6 +496,98 @@ class GestorHorarios {
 
     mostrarMensajeExito(mensaje) {
         alert(mensaje);
+    }
+    
+    seleccionarMateriaPendiente() {
+        const codigoSeleccionado = this.selectMateria.value;
+        
+        if (!codigoSeleccionado) {
+            return; // No hacer nada si se selecciona la opción por defecto
+        }
+        
+        // Buscar la materia seleccionada en las materias pendientes
+        const materiaSeleccionada = this.materiasPendientes.find(m => m.codigo === codigoSeleccionado);
+        
+        if (materiaSeleccionada) {
+            // Aplicamos los datos de la materia al curso actual
+            this.nombreInput.value = materiaSeleccionada.descripcion;
+            this.cursoActual.nombre = materiaSeleccionada.descripcion;
+            this.cursoActual.codigo = materiaSeleccionada.codigo;
+            
+            // Generar un color aleatorio si estamos creando un nuevo curso
+            if (this.cursoEditando === null) {
+                const colores = ['#4facfe', '#f857a6', '#43e97b', '#a166ab', '#f2d50f', '#ee609c', '#ad6edd', '#38ef7d', '#ff9a44'];
+                const colorAleatorio = colores[Math.floor(Math.random() * colores.length)];
+                this.colorInput.value = colorAleatorio;
+                this.cursoActual.color = colorAleatorio;
+            }
+        }
+    }
+    
+    filtrarMateriasPendientes() {
+        const textoBusqueda = this.filtroPendientesInput.value.toLowerCase().trim();
+        
+        // Ocultar todas las opciones primero, excepto la primera (placeholder)
+        Array.from(this.selectMateria.options).forEach((option, index) => {
+            if (index === 0) return; // Mantener siempre visible la primera opción
+            
+            const descripcion = option.textContent.toLowerCase();
+            const visible = descripcion.includes(textoBusqueda);
+            
+            // En HTML select, las opciones no se pueden ocultar con display:none
+            // Así que las quitamos y volvemos a agregar según el filtro
+            option.hidden = !visible;
+        });
+    }
+    
+    guardarCurso() {
+        // Validar nombre
+        if (!this.cursoActual.nombre.trim()) {
+            this.mostrarError('Debes asignar un nombre al curso');
+            return;
+        }
+        
+        // Validar que tenga al menos un horario
+        if (this.cursoActual.horarios.length === 0) {
+            this.mostrarError('Debes agregar al menos un horario para el curso');
+            return;
+        }
+        
+        if (this.cursoEditando !== null) {
+            // Editar curso existente
+            this.cursos[this.cursoEditando] = JSON.parse(JSON.stringify(this.cursoActual));
+        } else {
+            // Agregar nuevo curso
+            this.cursos.push(JSON.parse(JSON.stringify(this.cursoActual)));
+        }
+        
+        // Guardar cursos en localStorage
+        localStorage.setItem('cursos', JSON.stringify(this.cursos));
+        
+        // Actualizar visualizaciones
+        this.actualizarListaCursos();
+        this.actualizarVistaHorario();
+        this.resetearFormulario();
+        this.mostrarMensajeExito('Curso guardado correctamente');
+    }
+    
+    resetearFormulario() {
+        this.cursoActual = {
+            nombre: '',
+            color: '#4facfe',
+            horarios: [],
+            codigo: ''
+        };
+        this.cursoEditando = null;
+        
+        // Restablecer elementos del formulario
+        this.nombreInput.value = '';
+        this.colorInput.value = '#4facfe';
+        this.selectMateria.value = ''; // Resetear el selector de materias también
+        this.actualizarHorariosPreview();
+        
+        // Cambiar texto del botón
+        this.guardarCursoBtn.textContent = 'GUARDAR CURSO ✓';
     }
 }
 
