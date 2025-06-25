@@ -19,24 +19,7 @@
             "nota": 4.1,
             "creditos": 2.0
         },
-        {
-            "codigo": "FILOSO 448G5E",
-            "descripcion": "Razonamiento Lógico I",
-            "nota": 4.2,
-            "creditos": 1.0
-        },
-        {
-            "codigo": "FILOSO 449G5E",
-            "descripcion": "Razonamiento Lógico Ii",
-            "nota": 4.2,
-            "creditos": 1.0
-        },
-        {
-            "codigo": "FILOSO 450G5E",
-            "descripcion": "Razonamiento Lógico Iii",
-            "nota": 4.1,
-            "creditos": 1.0
-        },
+       
         {
             "codigo": "FISICA 127G7F",
             "descripcion": "Física Ii-Ing",
@@ -86,10 +69,10 @@
             "creditos": 2.0
         },
         {
-            "codigo": "LINGUIST 453G5F",
-            "descripcion": "Textos Y Discursos-Nivel Básic",
-            "nota": 3.6,
-            "creditos": 1.0
+            "codigo": "EAFIT 1G7E",
+            "descripcion": "Opcionales EAFIT",
+            "nota": 5,
+            "creditos": 3.0
         },
         {
             "codigo": "MATEMATI 15G7E",
